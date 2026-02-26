@@ -1,14 +1,14 @@
 ﻿namespace ZooApp {
   class Amphibian : Animal {
-    public string SkinMoisture { get; private set; }
+    public string skinMoisture { get; private set; }
 
-    public Amphibian(string name, int age, string habitat, string diet, string skinMoisture)
+    public Amphibian(string name, int age, string habitat, string diet, string moisture)
         : base(name, age, habitat, diet) {
-      SkinMoisture = skinMoisture;
+      skinMoisture = moisture;
     }
 
     public override string GetInfo() {
-      return base.GetInfo() + $", Type: Amphibian, Skin: {SkinMoisture}";
+      return base.GetInfo() + $", Type: Amphibian, Skin: {skinMoisture}";
     }
   }
 }

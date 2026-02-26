@@ -1,14 +1,14 @@
 ﻿namespace ZooApp {
   class Reptile : Animal {
-    public bool IsVenomous { get; private set; }
+    public bool isVenomous { get; private set; }
 
-    public Reptile(string name, int age, string habitat, string diet, bool isVenomous)
+    public Reptile(string name, int age, string habitat, string diet, bool venomous)
         : base(name, age, habitat, diet) {
-      IsVenomous = isVenomous;
+      isVenomous = venomous;
     }
 
     public override string GetInfo() {
-      return base.GetInfo() + $", Type: Reptile, Venomous: {(IsVenomous ? "yes" : "no")}";
+      return base.GetInfo() + $", Type: Reptile, Venomous: {(isVenomous ? "yes" : "no")}";
     }
   }
 }

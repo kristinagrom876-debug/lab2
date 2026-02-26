@@ -1,14 +1,14 @@
 ﻿namespace ZooApp {
   class Bird : Animal {
-    public double WingSpan { get; private set; }
+    public double wingSpan { get; private set; }
 
-    public Bird(string name, int age, string habitat, string diet, double wingSpan)
+    public Bird(string name, int age, string habitat, string diet, double span)
         : base(name, age, habitat, diet) {
-      WingSpan = wingSpan;
+      wingSpan = span;
     }
 
     public override string GetInfo() {
-      return base.GetInfo() + $", Type: Bird, Wingspan: {WingSpan} m";
+      return base.GetInfo() + $", Type: Bird, Wingspan: {wingSpan} m";
     }
   }
 }

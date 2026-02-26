@@ -1,11 +1,8 @@
 ﻿using System;
 
-namespace ZooApp
-{
-  class Program
-  {
-    static void Main()
-    {
+namespace ZooApp {
+  class Program {
+    static void Main() {
       AnimalManager manager = AnimalManager.Instance;
 
       manager.AddAnimal(new Mammal("Like", 5, "savanna", "carnivore", true));
@@ -16,15 +13,15 @@ namespace ZooApp
 
       Console.WriteLine("Welcome to the Zoo Manager!");
 
-      bool isRunning = true;
+      bool isRunning;
+      isRunning = true;
 
-      string choice, type, name, habitat, diet, waterType, skinMoisture;
+      string choice, type, name, habitat, diet, water, moisture;
       int age, index;
-      bool hasFur, isVenomous;
-      double wingSpan;
+      bool fur, venomous;
+      double span;
 
-      while (isRunning)
-      {
+      while (isRunning) {
         Console.WriteLine("\nMENU:");
         Console.WriteLine("1. Add new animal");
         Console.WriteLine("2. Show all animals");
@@ -35,8 +32,7 @@ namespace ZooApp
 
         choice = Console.ReadLine();
 
-        if (choice == "1")
-        {
+        if (choice == "1") {
           Console.WriteLine("\nSelect animal type:");
           Console.WriteLine("1. Mammal");
           Console.WriteLine("2. Bird");
@@ -48,76 +44,75 @@ namespace ZooApp
 
           Console.Write("Name: ");
           name = Console.ReadLine();
+
           Console.Write("Age: ");
           age = Convert.ToInt32(Console.ReadLine());
+
           Console.Write("Habitat: ");
           habitat = Console.ReadLine();
+
           Console.Write("Diet: ");
           diet = Console.ReadLine();
 
-          if (type == "1")
-          {
+          if (type == "1") {
             Console.Write("Has fur? (yes/no): ");
-            hasFur = Console.ReadLine() == "yes";
-            manager.AddAnimal(new Mammal(name, age, habitat, diet, hasFur));
+            fur = Console.ReadLine() == "yes";
+
+            manager.AddAnimal(new Mammal(name, age, habitat, diet, fur));
             Console.WriteLine("Animal added!");
           }
-          else if (type == "2")
-          {
+          else if (type == "2") {
             Console.Write("Wingspan (m): ");
-            wingSpan = Convert.ToDouble(Console.ReadLine());
-            manager.AddAnimal(new Bird(name, age, habitat, diet, wingSpan));
+            span = Convert.ToDouble(Console.ReadLine());
+
+            manager.AddAnimal(new Bird(name, age, habitat, diet, span));
             Console.WriteLine("Animal added!");
           }
-          else if (type == "3")
-          {
+          else if (type == "3") {
             Console.Write("Water type (fresh/salt): ");
-            waterType = Console.ReadLine();
-            manager.AddAnimal(new Fish(name, age, habitat, diet, waterType));
+            type = Console.ReadLine();
+
+            manager.AddAnimal(new Fish(name, age, habitat, diet, type));
             Console.WriteLine("Animal added!");
           }
-          else if (type == "4")
-          {
+          else if (type == "4") {
             Console.Write("Is venomous? (yes/no): ");
-            isVenomous = Console.ReadLine() == "yes";
-            manager.AddAnimal(new Reptile(name, age, habitat, diet, isVenomous));
+            venomous = Console.ReadLine() == "yes";
+
+            manager.AddAnimal(new Reptile(name, age, habitat, diet, venomous));
             Console.WriteLine("Animal added!");
           }
-          else if (type == "5")
-          {
+          else if (type == "5") {
             Console.Write("Skin moisture (moist/dry): ");
-            skinMoisture = Console.ReadLine();
-            manager.AddAnimal(new Amphibian(name, age, habitat, diet, skinMoisture));
+            moisture = Console.ReadLine();
+
+            manager.AddAnimal(new Amphibian(name, age, habitat, diet, moisture));
             Console.WriteLine("Animal added!");
           }
-          else
-          {
+          else {
             Console.WriteLine("Wrong type!");
           }
         }
-        else if (choice == "2")
-        {
+        else if (choice == "2") {
           manager.ShowAllAnimals();
         }
-        else if (choice == "3")
-        {
+        else if (choice == "3") {
           Console.Write("Enter index: ");
           index = Convert.ToInt32(Console.ReadLine());
+
           manager.ShowAnimalByIndex(index);
         }
-        else if (choice == "4")
-        {
+        else if (choice == "4") {
           Console.Write("Enter name: ");
           name = Console.ReadLine();
+
           manager.ShowAnimalByName(name);
         }
-        else if (choice == "5")
-        {
+        else if (choice == "5") {
           Console.WriteLine("Goodbye!");
           break;
         }
-        else
-        {
+        else {
           Console.WriteLine("Wrong choice! Try again.");
         }
       }

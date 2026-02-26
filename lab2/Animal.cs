@@ -2,20 +2,20 @@
 
 namespace ZooApp {
   abstract class Animal {
-    public string Name { get; private set; }
-    public int Age { get; private set; }
-    public string Habitat { get; private set; }
-    public string Diet { get; private set; }
+    public string name { get; private set; }
+    public int age { get; private set; }
+    public string habitat { get; private set; }
+    public string diet { get; private set; }
 
-    protected Animal(string name, int age, string habitat, string diet) {
-      Name = name;
-      Age = age;
-      Habitat = habitat;
-      Diet = diet;
+    protected Animal(string animalName, int animalAge, string animalHabitat, string animalDiet) {
+      name = animalName;
+      age = animalAge;
+      habitat = animalHabitat;
+      diet = animalDiet;
     }
 
     public virtual string GetInfo() {
-      return $"Name: {Name}, Age: {Age}, Habitat: {Habitat}, Diet: {Diet}";
+      return $"Name: {name}, Age: {age}, Habitat: {habitat}, Diet: {diet}";
     }
   }
 }
