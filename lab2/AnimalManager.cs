@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace ZooApp {
   sealed class AnimalManager {
-    private static readonly AnimalManager instance;
+    private static readonly AnimalManager s_instance;
 
     static AnimalManager() {
-      instance = new AnimalManager();
+      s_instance = new AnimalManager();
     }
-    public static AnimalManager Instance => instance;
+    public static AnimalManager Instance => s_instance;
 
     private List<Animal> animals;
 
